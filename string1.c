@@ -1,34 +1,34 @@
 #include "shell.h"
 
 /**
- * _custom_strcpy - Copies a string from source to destination.
- * @dest: The destination string.
- * @src: The source string.
+ * _strcpy - copies a string
+ * @dest: the destination
+ * @src: the source
  *
- * Return: Pointer to the destination string.
+ * Return: pointer to destination
  */
-char *_custom_strcpy(char *dest, char *src)
+char *_strcpy(char *dest, char *src)
 {
 	int i = 0;
 
-	if (dest == src || src == NULL)
+	if (dest == src || src == 0)
 		return (dest);
 	while (src[i])
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
+	dest[i] = 0;
 	return (dest);
 }
 
 /**
- * _custom_strdup - Creates a duplicate of a given string.
- * @str: The string to duplicate.
+ * _strdup - duplicates a string
+ * @str: the string to duplicate
  *
- * Return: Pointer to the duplicated string or NULL if memory allocation fails.
+ * Return: pointer to the duplicated string
  */
-char *_custom_strdup(const char *str)
+char *_strdup(const char *str)
 {
 	int length = 0;
 	char *ret;
@@ -46,12 +46,12 @@ char *_custom_strdup(const char *str)
 }
 
 /**
- * _custom_puts - Prints a given string.
- * @str: The string to be printed.
+ * _puts - prints an input string
+ * @str: the string to be printed
  *
- * Return: Nothing.
+ * Return: Nothing
  */
-void _custom_puts(char *str)
+void _puts(char *str)
 {
 	int i = 0;
 
@@ -59,19 +59,19 @@ void _custom_puts(char *str)
 		return;
 	while (str[i] != '\0')
 	{
-		_custom_putchar(str[i]);
+		_putchar(str[i]);
 		i++;
 	}
 }
 
 /**
- * _custom_putchar - Writes a character to the standard output.
- * @c: The character to be printed.
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
  *
- * Return: On success, returns 1.
- * On error, returns -1, and errno is set appropriately.
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-int _custom_putchar(char c)
+int _putchar(char c)
 {
 	static int i;
 	static char buf[WRITE_BUF_SIZE];
